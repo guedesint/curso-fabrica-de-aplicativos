@@ -11,29 +11,31 @@ function nutriApp() {
       posts = json;
 
       posts.map((item) => {
-          let liElement = document.createElement("li");
-          let titleElement = document.createElement("strong");
-          let imgElement = document.createElement("img");
-          let descriptionElement = document.createElement("a");
+        let liElement = document.createElement("li");
+        let titleElement = document.createElement("strong");
+        let imgElement = document.createElement("img");
+        let descriptionElement = document.createElement("a");
 
-          let titleText = document.createTextNode(item.titulo);
-          titleElement.appendChild(titleText);
-          listElement.appendChild(titleElement);
+        let titleText = document.createTextNode(item.titulo);
+        titleElement.appendChild(titleText);
+        liElement.appendChild(titleElement);
 
-          imgElement.src = item.capa;
-          liElement.appendChild(imgElement);
+        imgElement.src = item.capa;
+        liElement.appendChild(imgElement);
 
-          let descriptionText = document.createTextNode(item.subtitulo);
-          descriptionElement.appendChild(descriptionText);
-          liElement.appendChild(descriptionElement);
+        let descriptionText = document.createTextNode(item.subtitulo);
+        descriptionElement.appendChild(descriptionText);
+        liElement.appendChild(descriptionElement);
 
-          listElement.appendChild(liElement);
-        })
+        listElement.appendChild(liElement)
+
       })
-      .catch(() => {
-        console.log("Erro")
-      })
-  }
 
+    })
 
-  nutriApp();
+    .catch(() => {
+      console.log("DEU ALGUM ERRO");
+    })
+
+}
+nutriApp();
